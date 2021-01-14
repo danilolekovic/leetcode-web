@@ -11,11 +11,11 @@ const info = JSON.parse(readFileSync("info.json"));
 
 var htmlCode = `<html>
         <head>
-            <title>` + info["name"] + `'s Leetcode Solutions</title>
+            <title>` + info["name"] + `'s ` + info["problem-provider"] + ` Solutions</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         </head>
         <body style="padding:3em;">
-            <h2>` + info["name"] + `'s Leetcode Solutions</h2>
+            <h2>` + info["name"] + `'s ` + info["problem-provider"] + ` Solutions</h2>
             <ul>\n`;
 
 for (dir in dirs) {
@@ -53,18 +53,14 @@ for (dir in dirs) {
             var answerHtml =
                 `<html>
                     <head>
-                        <title>` + info["name"] + `'s Leetcode Solutions</title>
+                        <title>` + info["name"] + `'s ` + info["problem-provider"] + ` Solutions</title>
                         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                     </head>
                     <body style="padding:3em;">
                     <h2><a href="../index.html">Go Back</a></h2>
                     <br>
                     <br>
-                    <pre><code class="` +
-                languageType() +
-                `">` +
-                data +
-                `</pre></code>
+                    <pre><code class="` + languageType() + `">` + data + `</pre></code>
                         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                         <link rel="stylesheet"
                             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
